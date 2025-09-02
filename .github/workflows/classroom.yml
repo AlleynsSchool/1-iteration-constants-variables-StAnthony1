@@ -13,38 +13,18 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: task 1
-      id: task-1
+    - name: Q1 test test
+      id: q1-test-test
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: task 1
-        setup-command: sudo -H pip3 install pytest
-        command: pytest test_1.py
+        test-name: Q1 test test
+        setup-command: ''
+        command: pytest /HW1/hw1_tests.py::test_constantsAndVariables
         timeout: 10
-        max-score: 3
-    - name: task 2
-      id: task-2
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: task 2
-        setup-command: sudo -H pip3 install pytest
-        command: pytest test_2.py
-        timeout: 10
-        max-score: 4
-    - name: task 3
-      id: task-3
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: task 3
-        setup-command: sudo -H pip3 install pytest
-        command: pytest test_3.py
-        timeout: 10
-        max-score: 3
+        max-score: 2
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TASK-1_RESULTS: "${{steps.task-1.outputs.result}}"
-        TASK-2_RESULTS: "${{steps.task-2.outputs.result}}"
-        TASK-3_RESULTS: "${{steps.task-3.outputs.result}}"
+        Q1-TEST-TEST_RESULTS: "${{steps.q1-test-test.outputs.result}}"
       with:
-        runners: task-1,task-2,task-3
+        runners: q1-test-test
