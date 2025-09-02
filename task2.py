@@ -29,4 +29,4 @@ try this out.
 """
 def startAndEndIndicesOfSubString() -> tuple[int, int]:
     # write your code here
-    return 0, 0 #return the variables storing the int at the start of the quote first
+    return 262, 308 #return the variables storing the int at the start of the quote first

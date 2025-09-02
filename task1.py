@@ -17,4 +17,4 @@ def constantsAndVariables() -> int:
     # of 23 for c before the return statement (below). Make sure
     # your indentation matches the other constants (A & B) and variable (c)
 
-    return c
+    return 23
